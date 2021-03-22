@@ -1,0 +1,393 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Galindo&display=swap');
+
+.jumbo h1 {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 3rem;
+}
+
+.jumbo {
+    height: 250px;
+    color: #fff;
+}
+
+.jumboKont {
+    background-color: #ff5cf7;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='100%25' gradientTransform='rotate(236,428,307)'%3E%3Cstop offset='0' stop-color='%23ff5cf7'/%3E%3Cstop offset='1' stop-color='%23ffba2b'/%3E%3C/linearGradient%3E%3Cpattern patternUnits='userSpaceOnUse' id='b' width='844' height='703.3' x='0' y='0' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='0.13'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect x='0' y='0' fill='url(%23b)' width='100%25' height='100%25'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+body {
+    overflow: -moz-scrollbars-vertical;
+    overflow-x: hidden;
+}
+
+.jumbo .btn-green {
+    text-transform: uppercase;
+    background-color: #ABDA0A;
+}
+
+.btn-green:hover {
+    background-color: #CEFF25;
+}
+
+a.btn-green {
+    font-weight: 500;
+    color: white;
+}
+
+a.btn-green:hover {
+    color: purple;
+}
+
+.fizu {
+    font-family: 'Galindo', cursive;
+    font-size: 3rem;
+    color: #ffffff;
+}
+
+.dropdown .dropdown-menu {
+    background-color: #343A40;
+
+}
+
+.navbar-dark .navbar-nav .nav-item .nav-link {
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.dropdown .dropdown-item {
+    color: #fff;
+}
+
+.dropdown-divider {
+    color: #fff;
+}
+
+.navbar-dark .navbar-nav .nav-item .nav-link:hover {
+    color: purple;
+}
+
+.dropdown .dropdown-item:hover {
+    color: #ffff;
+    background-color: purple;
+}
+
+.font-lg {
+    font-size: 1.4rem;
+}
+
+.bg-green {
+    background-color: rgba(171, 218, 10, 0.2);
+}
+
+.home-card {
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.19), 0px 6px 6px rgba(0, 0, 0, 0.23)
+}
+
+.btn.btn-outline-success {
+    border: 2px solid;
+    font-weight: bold;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+div a {
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    text-decoration: none;
+    color: purple;
+}
+
+.line {
+    font-size: 1.5rem;
+    margin: 0 0 1em;
+    padding: 0;
+    text-shadow: 1px 1px 1px #000;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.line:before, .line:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    margin-left: -999em;
+    height: 2px;
+    width: 998em;
+    border-top: 1px solid #fff;
+}
+
+.line:after {
+    left: auto;
+    width: 999em;
+    margin: 0 0 0 1em;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.blog-card {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16),
+    0 2px 10px 0 rgba(0, 0, 0, .12);
+    transition: box-shadow 0.25s;
+}
+
+.blog-card:hover {
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2),
+    0 6px 20px 0 rgba(0, 0, 0, .19);
+}
+
+div .btn-facebook {
+    background-color: #385998;
+    border-radius: 1px;
+    color: #fff;
+    border: solid #263961;
+}
+
+div .btn-facebook:link, div .btn-facebook:visited {
+    color: #fff;
+}
+
+div .btn-facebook:hover {
+    background-color: #263961;
+}
+
+div .btn-facebook:active {
+    background-color: #263961;
+}
+
+.bejelentkezes {
+    background-image: url("img/login-bg.jpg");
+    min-height: 100vh;
+    background-size: cover;
+    padding-top: 3%;
+    padding-bottom: 2%;
+}
+
+.row .login-card {
+    background-color: rgba(42, 47, 51, .8);
+    color: white;
+}
+
+.row .login-card a {
+    color: #eff0f7;
+}
+
+.row .login-card-header {
+    background-color: rgba(42, 47, 51, .8);
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #eff0f7;
+}
+
+.row .login-card .form-control {
+    background-color: rgba(42, 47, 51, .7);
+    border-color: transparent;
+    color: #eff0f7;;
+}
+
+.row .login-card .form-control:focus {
+    background-color: rgba(42, 47, 51, .5);
+    border-color: #3384AA;
+    outline: none;
+    box-shadow: none;
+    color: #eff0f7;
+
+}
+
+.row .login-card form input::placeholder {
+    color: #d6d7de;
+    opacity: .8;
+}
+
+button.login-Btn-facebook {
+    background: linear-gradient(#4c69ba, #3b55a0);
+    text-shadow: 0 -1px 0 #354c8c;
+
+}
+
+button.login-Btn-facebook:hover,
+button.login-Btn-facebook:focus {
+    background: linear-gradient(#5b7bd5, #4864b1);
+    color: white;
+}
+
+button.loginBtn {
+    color: white;
+    font-size: 0.8rem;
+}
+
+button.login-Btn-google {
+    background: linear-gradient(#dd4b39, #a7372b);
+    text-shadow: 0 -1px 0 #dd4b39;
+}
+
+button.login-Btn-google:hover,
+button.login-Btn-google:focus {
+    background: linear-gradient(#e74537, #cd4435);
+    color: white;
+}
+
+button.btn-login {
+    background-color: #298e62;
+    color: white;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+button.btn-login:hover {
+    background: #428e81;
+    color: white;
+}
+
+.errorBackground {
+    background: linear-gradient(rgba(43, 45, 66, 0.4), rgba(43, 45, 66, 0.6)), url("img/error-page.jpeg");
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    background-size: cover;
+    overflow: hidden;
+
+}
+
+.content {
+    padding-top: 118px;
+    color: #cdd4de;
+}
+
+.content h1 {
+    font-weight: 900;
+    font-size: 8.5rem;
+    opacity: 0.6;
+}
+
+.content h2 {
+    font-weight: 600;
+    font-size: 2.2rem;
+    opacity: 0.9;
+}
+
+
+@media (min-width: 1200px) {
+    html {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .jumbo {
+        height: 350px;
+    }
+}
+
+@media (max-width: 576px) {
+    .jumbo {
+        height: 450px;
+    }
+
+}
+
+@media (max-width: 350px) {
+    button.btn-login {
+        letter-spacing: 0;
+        font-weight: inherit;
+        font-size: 0.8rem;
+        padding: 1px;
+    }
+
+    div.card-footer {
+        padding: 0;
+    }
+}
+
+@media (max-width: 300px) {
+    .jumbo {
+        height: 300px;
+    }
+
+    a.btn-green {
+        font-size: 14px;
+    }
+
+    .jumbo p {
+        font-size: 16px;
+    }
+
+    .jumbo h1 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 250px) {
+    .jumbo {
+        height: 250px;
+    }
+
+    a.btn-green {
+        font-size: 10px;
+    }
+
+    .jumbo p {
+        font-size: 12px;
+    }
+
+    .jumbo h1 {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 225px) {
+    button.btn-login {
+        letter-spacing: 0;
+        font-weight: inherit;
+        font-size: 0.5rem;
+    }
+
+    div.card-footer {
+        padding: 0;
+    }
+
+    button.loginBtn {
+        letter-spacing: 0;
+        font-weight: inherit;
+        font-size: 0.5rem;
+    }
+
+    form {
+        font-size: 0.5rem;
+    }
+
+    div.card-body {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+@media (max-width: 200px) {
+
+    .jumbo {
+        height: 250px;
+    }
+
+    a.btn-green {
+        font-size: 8px;
+    }
+
+    .jumbo p {
+        font-size: 10px;
+    }
+
+    .jumbo h1 {
+        font-size: 12px;
+    }
+
+}
