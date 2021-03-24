@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Navigation></Navigation>
+        <Navigation v-bind:itemCollection="navItems"></Navigation>
         <ul>
             <li @click="currentPage = 'index'">index</li>
             <li @click="currentPage = 'blog'">blog</li>
@@ -20,6 +20,7 @@
 
 
     export default {
+        name: 'App',
         components: {
             Navigation,
             Footer,
@@ -29,8 +30,18 @@
         data: function () {
             return {
                 currentPage: "index",
-                message: 'Sikerult behuzni az App. vue-t'
-            }
+                navItems:[],
+            };
+        },
+        created(){
+            this.navItems.push({
+                name: 'Fooldal',
+                id: 'index'
+            });
+            this.navItems.push({
+                name: 'Blog',
+                id: 'blog'
+            })
         }
     };
 </script>
