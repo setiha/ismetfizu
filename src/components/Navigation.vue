@@ -40,7 +40,7 @@
         props: ["itemCollection"],
         methods:{
             OnItemClick(id){
-                console.log("newId", id);
+                this.$emit('pageChange', id);
             }
         }
     };

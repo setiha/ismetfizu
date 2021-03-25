@@ -1,10 +1,6 @@
 <template>
     <div>
-        <Navigation v-bind:itemCollection="navItems"></Navigation>
-        <ul>
-            <li @click="currentPage = 'index'">index</li>
-            <li @click="currentPage = 'blog'">blog</li>
-        </ul>
+        <Navigation v-bind:itemCollection="navItems" @pageChange = "onPageChange"></Navigation>
         <keep-alive>
             <component v-bind:is="currentPage"></component>
         </keep-alive>
@@ -42,6 +38,12 @@
                 name: 'Blog',
                 id: 'blog'
             })
+        },
+        methods:{
+            onPageChange(newPage){
+                console.log(newPage);
+                this.currentPage = newPage
+            }
         }
     };
 </script>
