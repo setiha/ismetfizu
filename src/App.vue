@@ -1,9 +1,8 @@
 <template>
     <div>
-        <Navigation v-bind:itemCollection="navItems" @pageChange = "onPageChange"></Navigation>
-        <keep-alive>
-            <component v-bind:is="currentPage"></component>
-        </keep-alive>
+        <Navigation v-bind:itemCollection="navItems" @pageChange="onPageChange"></Navigation>
+
+        <router-view></router-view>
         <Footer></Footer>
     </div>
 </template>
@@ -26,21 +25,23 @@
         data: function () {
             return {
                 currentPage: "blog",
-                navItems:[],
+                navItems: [],
             };
         },
-        created(){
+        created() {
             this.navItems.push({
                 name: 'Fooldal',
-                id: 'index'
+                id: 'index',
+                path: '/'
             });
             this.navItems.push({
                 name: 'Blog',
-                id: 'blog'
+                id: 'blog',
+                path: '/blog'
             })
         },
-        methods:{
-            onPageChange(newPage){
+        methods: {
+            onPageChange(newPage) {
                 console.log(newPage);
                 this.currentPage = newPage
             }

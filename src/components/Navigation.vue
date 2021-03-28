@@ -1,6 +1,6 @@
 <template>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-0 sticky-top">
-        <a class="navbar-brand fizu" href="index.html">fizu.hu</a>
+        <router-link class="navbar-brand fizu" to="/">fizu.hu</router-link>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                 aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -8,8 +8,8 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active px-3" v-for="item in itemCollection">
-                    <a class="nav-link" href="" @click.prevent="OnItemClick(item.id)">{{item.name}}
-                    </a>
+                    <router-link class="nav-link" :to="{name: item.name}">{{item.name}}
+                    </router-link>
                 </li>
                 <!--<li class="nav-item px-3">
                     <a class="nav-link" href="kedvenc-stat.html">Kedvenc statisztikáink</a>
