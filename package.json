@@ -5,11 +5,13 @@
   "main": "main.js",
   "scripts": {
     "dev": "webpack-dev-server --open --hot --hide-modules",
-    "build": "webpack --progress --hide-modules"
+    "build": "webpack --progress --hide-modules",
+    "backend": "json-server ./backend/db.json w"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.21.1",
     "bootstrap": "^4.1.1",
     "vue": "^2.5.16"
   },
@@ -23,6 +25,7 @@
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "jquery": "^3.6.0",
+    "json-server": "^0.16.3",
     "node-sass": "^4.9.0",
     "popper.js": "^1.16.1",
     "sass-loader": "^7.0.3",

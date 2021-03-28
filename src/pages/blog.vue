@@ -11,147 +11,9 @@
             <div class="row">
                 <div class="col-12 col-md-9">
                     <div class="row px-lg-5 justify-content-center">
+                            <BlogPostCard v-for="postDb in filteredPostCollection" :key="postDb.id"
+                                          v-bind:post="postDb"></BlogPostCard>
 
-                        <div class="col-12 col-md-5 my-3">
-                            <div class="card blog-card">
-                                <img src="src/img/blog_kep1.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title text-uppercase">Lorem ipsum dolor</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae
-                                        commodi deleniti, dolorum in laudantium perferendis.</p>
-                                    <p class="card-text">
-                                        <small class="text-muted">2021.01.29</small>
-                                    </p>
-                                    <a href="cikk.html" class="float-end">Tovabb olvasom...</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-5 my-3">
-                            <div class="card blog-card">
-                                <img src="src/img/blog_kep2.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title text-uppercase">Lorem ipsum dolor</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae
-                                        commodi deleniti, dolorum in laudantium perferendis.</p>
-                                    <p class="card-text">
-                                        <small class="text-muted">2021.01.29</small>
-                                    </p>
-                                    <a href="cikk.html" class="float-end">Tovabb olvasom...</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-5 my-3">
-                            <div class="card blog-card">
-                                <img src="src/img/blog_kep3.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title text-uppercase">Lorem ipsum dolor</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae
-                                        commodi deleniti, dolorum in laudantium perferendis.</p>
-                                    <p class="card-text">
-                                        <small class="text-muted">2021.01.29</small>
-                                    </p>
-                                    <a href="cikk.html" class="float-end">Tovabb olvasom...</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-5 my-3">
-                            <div class="card blog-card">
-                                <img src="src/img/blog_kep4.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title text-uppercase">Lorem ipsum dolor</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae
-                                        commodi deleniti, dolorum in laudantium perferendis.</p>
-                                    <p class="card-text">
-                                        <small class="text-muted">2021.01.29</small>
-                                    </p>
-                                    <a href="cikk.html" class="float-end">Tovabb olvasom...</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-5 my-3">
-                            <div class="card blog-card">
-                                <img src="src/img/blog_kep5.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title text-uppercase">Lorem ipsum dolor</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae
-                                        commodi deleniti, dolorum in laudantium perferendis.</p>
-                                    <p class="card-text">
-                                        <small class="text-muted">2021.01.29</small>
-                                    </p>
-                                    <a href="cikk.html" class="float-end">Tovabb olvasom...</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-5 my-3">
-                            <div class="card blog-card">
-                                <img src="src/img/blog_kep6.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title text-uppercase">Lorem ipsum dolor</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae
-                                        commodi deleniti, dolorum in laudantium perferendis.</p>
-                                    <p class="card-text">
-                                        <small class="text-muted">2021.01.29</small>
-                                    </p>
-                                    <a href="cikk.html" class="float-end">Tovabb olvasom...</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-5 my-3">
-                            <div class="card blog-card">
-                                <img src="src/img/blog_kep7.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title text-uppercase">Lorem ipsum dolor</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae
-                                        commodi deleniti, dolorum in laudantium perferendis.</p>
-                                    <p class="card-text">
-                                        <small class="text-muted">2021.01.29</small>
-                                    </p>
-                                    <a href="cikk.html" class="float-end">Tovabb olvasom...</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-5 my-3">
-                            <div class="card blog-card">
-                                <img src="src/img/blog_kep1.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title text-uppercase">Lorem ipsum dolor</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae
-                                        commodi deleniti, dolorum in laudantium perferendis.</p>
-                                    <p class="card-text">
-                                        <small class="text-muted">2021.01.29</small>
-                                    </p>
-                                    <a href="cikk.html" class="float-end">Tovabb olvasom...</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-5 my-3">
-                            <div class="card blog-card">
-                                <img src="src/img/blog_kep1.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title text-uppercase">Lorem ipsum dolor</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae
-                                        commodi deleniti, dolorum in laudantium perferendis.</p>
-                                    <p class="card-text">
-                                        <small class="text-muted">2021.01.29</small>
-                                    </p>
-                                    <a href="cikk.html" class="float-end">Tovabb olvasom...</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-5 my-3 ">
-                            <div class="card blog-card">
-                                <img src="src/img/blog_kep1.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title text-uppercase">Lorem ipsum dolor</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae
-                                        commodi deleniti, dolorum in laudantium perferendis.</p>
-                                    <p class="card-text">
-                                        <small class="text-muted">2021.01.29</small>
-                                    </p>
-                                    <a href="cikk.html" class="float-end">Tovabb olvasom...</a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class=" col-10 col-md-3 mx-auto">
@@ -159,16 +21,8 @@
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-sm btn-outline-success my-2" type="submit">Search</button>
                     </form>
-                    <div class="mt-5">
-                        <h3 class="mb-3">Kategoriak</h3>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><a href="#">Kategoria 1 (22)</a></li>
-                            <li class="list-group-item"><a href="#">Kategoria 2 (25)</a></li>
-                            <li class="list-group-item"><a href="#">Kategoria 3 (22)</a></li>
-                            <li class="list-group-item"><a href="#">Kategoria 4 (33)</a></li>
-                            <li class="list-group-item"><a href="#">Kategoria 5 (44)</a></li>
-                        </ul>
-                    </div>
+                    <BlogPostCategories v-bind:postCollectionIn="postCollection"
+                                        v-on:categoryChange="OnCategoryChange"></BlogPostCategories>
                     <div class="my-5">
                         <h3 class="mb-3">Tags</h3>
                         <a href="#" class="badge bg-primary rounded-pill p-2 m-1">Informatika</a>
@@ -182,7 +36,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <!--<div class="row">
                 <nav aria-label="Page navigation example" class=" mt-5">
                     <ul class="pagination justify-content-center">
                         <li class="page-item"><a class="page-link" href="#">Elozo</a></li>
@@ -192,13 +46,55 @@
                         <li class="page-item"><a class="page-link" href="#">Kovetkezo</a></li>
                     </ul>
                 </nav>
-            </div>
+            </div>-->
         </div>
     </div>
 </template>
 
 <script>
+    import DataService from "../DataService";
+    import BlogPostCard from "../components/BlogPostCard.vue";
+    import BlogPostCategories from "../components/BlogPostCategories.vue";
+
     export default {
-        name: "blog.vue"
-    }
+        name: "blog.vue",
+        components: {
+            BlogPostCard,
+            BlogPostCategories
+        },
+        data() {
+            return {
+                postCollection: [],
+                filters:{}
+            };
+        },
+        created() {
+            DataService.GetPosts().then(posts => {
+                this.postCollection = posts;
+            });
+        },
+        computed:{
+           filteredPostCollection(){
+               const filterKeyCollection = Object.keys(this.filters);
+               if(filterKeyCollection.length ===0){
+                   return this.postCollection;
+               }
+               return this.postCollection.filter(post =>{
+                   const passingFilters = filterKeyCollection.filter(filterKey =>{
+                       return post[filterKey] === this.filters[filterKey];
+                   });
+                    return passingFilters.length ===filterKeyCollection.length;
+               });
+           }
+        },
+        methods:{
+            OnCategoryChange(newCategory){
+                if(newCategory){
+                this.$set(this.filters, "category", newCategory);
+                }else{
+                    this.$delete(this.filters, "category");
+                }
+            }
+        }
+    };
 </script>

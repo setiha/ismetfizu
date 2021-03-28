@@ -1,12 +1,12 @@
-<template>
+<template xmlns:V-bind="http://www.w3.org/1999/xhtml">
     <div>
-        <div class="container-fluid bg-light jumboKont mb-5">
-            <div class="container jumbo pt-5">
-                <h1>Mennyit keresnek, ha...</h1>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, totam!</p>
-                <a href="#" class="btn btn-green btn-lg" role="button" aria-disabled="true">Tovabb a kerdoivekre!</a>
-            </div>
-        </div>
+        <Jumbotron buttonURL="#" buttonText="Tovabb a kerdoivekre">
+            <template slot="title">Mennyit keresnek ha</template>
+            <template slot="lead">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consequuntur in nihil, praesentium
+                quibusdam voluptatem.
+            </template>
+        </Jumbotron>
         <main>
             <section class="container">
                 <div class="row py-5">
@@ -65,21 +65,8 @@
                     </div>
                 </div>
             </section>
-            <section>
-                <div class="container py-5">
-                    <div class="row">
-                        <div class="col-12 col-md-8 mx-auto">
-                            <h3 class="mb-3">A video beagyazasa a weboldalba</h3>
-                            <div class="ratio ratio-16x9">
-                                <iframe width="727" height="409" src="https://www.youtube.com/embed/sq3tS5H8ZCY"
-                                        frameborder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                        allowfullscreen></iframe>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <YoutubeVideoEmbed source="https://www.youtube.com/embed/sq3tS5H8ZCY"
+                               title="Video beagyazasa a weboldalba"></YoutubeVideoEmbed>
             <section class="bg-green py-5">
                 <div class="container">
                     <div id="carousel1" class="carousel slide p-5" data-bs-ride="carousel">
@@ -140,8 +127,15 @@
 </template>
 
 <script>
+    import Jumbotron from "../components/Jumbotron.vue";
+    import YoutubeVideoEmbed from "../components/YoutubeVideoEmbed.vue";
+
     export default {
-        name: "index.vue"
+        name: "index.vue",
+        components: {
+            Jumbotron,
+            YoutubeVideoEmbed
+        }
     }
 </script>
 
