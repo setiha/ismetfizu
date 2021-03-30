@@ -11,8 +11,8 @@
             <div class="row">
                 <div class="col-12 col-md-9">
                     <div class="row px-lg-5 justify-content-center">
-                            <BlogPostCard v-for="postDb in filteredPostCollection" :key="postDb.id"
-                                          v-bind:post="postDb"></BlogPostCard>
+                        <BlogPostCard v-for="postDb in filteredPostCollection" :key="postDb.id"
+                                      v-bind:post="postDb"></BlogPostCard>
 
                     </div>
                 </div>
@@ -65,7 +65,7 @@
         data() {
             return {
                 postCollection: [],
-                filters:{}
+                filters: {}
             };
         },
         created() {
@@ -73,25 +73,22 @@
                 this.postCollection = posts;
             });
         },
-        computed:{
-           filteredPostCollection(){
-               const filterKeyCollection = Object.keys(this.filters);
-               if(filterKeyCollection.length ===0){
-                   return this.postCollection;
+        computed: {
+            filteredPostCollection() {
+               if(!this.$route.params.categoryName){
+                 return  this.postCollection
                }
-               return this.postCollection.filter(post =>{
-                   const passingFilters = filterKeyCollection.filter(filterKey =>{
-                       return post[filterKey] === this.filters[filterKey];
-                   });
-                    return passingFilters.length ===filterKeyCollection.length;
+               return this.postCollection.filter(post => {
+                  return post.category === this.$route.params.categoryName;
                });
-           }
+
+            }
         },
-        methods:{
-            OnCategoryChange(newCategory){
-                if(newCategory){
-                this.$set(this.filters, "category", newCategory);
-                }else{
+        methods: {
+            OnCategoryChange(newCategory) {
+                if (newCategory) {
+                    this.$set(this.filters, "category", newCategory);
+                } else {
                     this.$delete(this.filters, "category");
                 }
             }

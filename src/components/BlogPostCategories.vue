@@ -3,13 +3,16 @@
         <h3 class="mb-3">Kategoriak</h3>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
-               <a href="" v-on:click.prevent="OnCategoryClick()">
+               <router-link :to="{name: 'Blog'}">
                    Osszes
-                </a></li>
+                </router-link></li>
 
             <li class="list-group-item"
-                v-for="(category, index) in categoryCollection"><a href="" v-on:click.prevent="OnCategoryClick(category)">
-                {{category}}</a></li>
+                v-for="(category, index) in categoryCollection"><router-link :to="{name: 'blogCategory',
+                 params:{
+                    categoryName: category
+                }}">
+                {{category}}</router-link></li>
         </ul>
     </div>
 </template>

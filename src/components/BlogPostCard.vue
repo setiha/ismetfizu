@@ -9,7 +9,7 @@
                 <p class="card-text">
                     <small class="text-muted">{{post.date}}</small>
                 </p>
-                <a href="">Tovabb olvasom...</a>
+                <router-link :to="{name:'blogPost', params:{postID:post.id}}">Tovabb olvasom...</router-link>
                 </div>
             </div>
         </div>
