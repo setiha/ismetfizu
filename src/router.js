@@ -4,7 +4,7 @@ import VueRouter from 'vue-router';
 import index from "./pages/index.vue";
 import blog from "./pages/blog.vue";
 import post from "./pages/post.vue";
-
+import contact from "./pages/contact.vue";
 export default new VueRouter({
     routes: [
 
@@ -28,6 +28,12 @@ export default new VueRouter({
             name: "blogPost",
             path: "/blog/post/:postID",
             component: post
+
+        },
+        {
+            name: "Kapcsolat",
+            path: "/contact",
+            component: contact
 
         }
     ],
