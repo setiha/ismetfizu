@@ -12,3 +12,11 @@ new Vue({
     router,
     render: h => h(App)
 });
+import DataService from "./DataService";
+
+const message = {
+    "email": "tihi@gmail.com",
+    "message": "Csak tesztelek",
+    "name": "tihici"
+};
+
