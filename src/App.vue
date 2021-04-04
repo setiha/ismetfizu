@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Navigation v-bind:itemCollection="navItems" @pageChange="onPageChange"></Navigation>
+        <Navigation></Navigation>
 
         <router-view></router-view>
         <Footer></Footer>
@@ -12,44 +12,15 @@
     import Footer from "./components/Footer.vue";
     import index from "./pages/index.vue";
     import blog from "./pages/blog.vue";
-
-
+    import survey from "./pages/survey.vue";
     export default {
         name: 'App',
         components: {
             Navigation,
             Footer,
             index,
-            blog
-        },
-        data: function () {
-            return {
-                currentPage: "blog",
-                navItems: [],
-            };
-        },
-        created() {
-            this.navItems.push({
-                name: 'Fooldal',
-                id: 'index',
-                path: '/'
-            });
-            this.navItems.push({
-                name: 'Blog',
-                id: 'blog',
-                path: '/blog'
-            });
-            this.navItems.push({
-                name: 'Kapcsolat',
-                id: 'contact',
-                path: '/contact'
-            });
-        },
-        methods: {
-            onPageChange(newPage) {
-                console.log(newPage);
-                this.currentPage = newPage
-            }
+            blog,
+            survey
         }
     };
 </script>

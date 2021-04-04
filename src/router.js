@@ -5,6 +5,7 @@ import index from "./pages/index.vue";
 import blog from "./pages/blog.vue";
 import post from "./pages/post.vue";
 import contact from "./pages/contact.vue";
+import survey from "./pages/survey.vue";
 export default new VueRouter({
     routes: [
 
@@ -34,6 +35,12 @@ export default new VueRouter({
             name: "Kapcsolat",
             path: "/contact",
             component: contact
+
+        },
+        {
+            name: "Kerdoiv",
+            path: "/survey",
+            component: survey
 
         }
     ],
