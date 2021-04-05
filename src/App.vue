@@ -13,6 +13,7 @@
     import index from "./pages/index.vue";
     import blog from "./pages/blog.vue";
     import survey from "./pages/survey.vue";
+    import statistics from "./pages/statistics.vue";
     export default {
         name: 'App',
         components: {
@@ -20,7 +21,8 @@
             Footer,
             index,
             blog,
-            survey
+            survey,
+            statistics
         }
     };
 </script>

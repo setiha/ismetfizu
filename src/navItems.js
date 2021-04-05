@@ -18,6 +18,11 @@ export default [
         name: 'Kapcsolat',
         id: 'contact',
         path: '/contact'
+    },
+    {
+        name: 'Fizu terkep',
+        id: 'statistics',
+        path: '/statistics'
     }
 ]
 ;

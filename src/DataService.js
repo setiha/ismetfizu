@@ -35,7 +35,7 @@ export default {
             });
     },
     GetSurveyResponses() {
-        return axios.get(FIREBASE_URL + "/surveyResponses").then((result) => {
+        return axios.get(FIREBASE_URL + "/surveyResponses.json").then((result) => {
             return result.data;
         });
     },

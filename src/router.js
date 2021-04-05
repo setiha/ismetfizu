@@ -6,6 +6,7 @@ import blog from "./pages/blog.vue";
 import post from "./pages/post.vue";
 import contact from "./pages/contact.vue";
 import survey from "./pages/survey.vue";
+import statistics from "./pages/statistics.vue";
 export default new VueRouter({
     routes: [
 
@@ -41,6 +42,12 @@ export default new VueRouter({
             name: "Kerdoiv",
             path: "/survey",
             component: survey
+
+        },
+        {
+            name: "Fizu terkep",
+            path: "/statistics",
+            component: statistics
 
         }
     ],
