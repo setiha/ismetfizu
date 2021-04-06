@@ -1,16 +1,17 @@
 import axios from "axios";
 
-export const BACKEND_URL = " http://localhost:3000";
-export const FIREBASE_URL = "https://fizu-3e4ff-default-rtdb.firebaseio.com/";
+export const BACKEND_URL = "http://localhost:3000";
+export const FIREBASE_URL = "https://fizu-3e4ff-default-rtdb.firebaseio.com";
 
 export default {
     GetPosts() {
-        return axios.get(BACKEND_URL + "/blogposts").then((result) => {
+        return axios.get(`${FIREBASE_URL}/blogposts.json`).then(result => {
+
             return result.data;
         });
     },
     GetPost(postID) {
-        return axios.get(BACKEND_URL + "/blogposts/" + postID).then((result) => {
+        return axios.get(`${FIREBASE_URL}/blogposts/${postID}.json`).then((result) => {
             return result.data;
         });
     },
