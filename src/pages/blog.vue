@@ -21,8 +21,8 @@
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-sm btn-outline-success my-2" type="submit">Search</button>
                     </form>
-                   <!-- <BlogPostCategories v-bind:postCollectionIn="postCollection"
-                                        v-on:categoryChange="OnCategoryChange"></BlogPostCategories>-->
+                    <BlogPostCategories v-bind:postCollectionIn="postCollection"
+                                        v-on:categoryChange="OnCategoryChange"></BlogPostCategories>
                     <div class="my-5">
                         <h3 class="mb-3">Tags</h3>
                         <a href="#" class="badge bg-primary rounded-pill p-2 m-1">Informatika</a>

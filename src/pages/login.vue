@@ -3,7 +3,7 @@
 <template>
     <div class="bejelentkezes">
         <div class="container w-75">
-            <div class="row">
+            <div class="row text-center">
                 <div class="col-12 col-md-8 col-lg-6 mx-auto">
                     <div class="card mx-auto login-card">
                         <div class="card-header login-card-header text-uppercase">
@@ -22,11 +22,11 @@
                                            placeholder="Password">
                                     <small><a href="#">Elfelejtetted a jelszavadat?</a></small>
                                 </div>
-                                <div class="mb-3 form-check">
+                                <!--<div class="mb-3 form-check">
                                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                     <label class="form-check-label" for="exampleCheck1">Bejelentkezve maradok</label>
-                                </div>
-                                <div class="text-center my-3">
+                                </div>-->
+                               <!-- <div class="text-center my-3">
                                     <button type="button" class=" loginBtn btn login-Btn-facebook py-2 my-2 "><img
                                             src="src/img/facebook.svg" height="18" alt="Facebook icon"
                                             class="me-2 mb-1">Facebook
@@ -36,7 +36,7 @@
                                             src="src/img/google.svg" height="22" alt="Google icon" class="me-2">Google
                                         bejelentkezes
                                     </button>
-                                </div>
+                                </div>-->
                                 <div class="card-footer border-0">
                                     <div class="d-grid gap-2">
                                         <button class="btn text-uppercase btn-login" type="button">Bejelentkezes
