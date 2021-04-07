@@ -9,6 +9,7 @@ import survey from "./pages/survey.vue";
 import statistics from "./pages/statistics.vue";
 import login from "./pages/login.vue";
 import registration from "./pages/registration.vue";
+import profile from "./pages/profile.vue";
 export default new VueRouter({
     mode: 'history',
     routes: [
@@ -63,6 +64,11 @@ export default new VueRouter({
             name: "Sign up",
             path: "/registration",
             component: registration
+        },
+        {
+            name: "Profile",
+            path: "/profile",
+            component: profile
 
         },
     ],

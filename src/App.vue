@@ -26,6 +26,7 @@
             survey,
             statistics,
             registration
-        }
+        },
+
     };
 </script>
