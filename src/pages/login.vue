@@ -10,16 +10,16 @@
                             Bejelentkezes
                         </div>
                         <div class="card-body">
-                            <form>
+                            <form @submit.prevent="login()">
                                 <div class="mb-2">
                                     <label for="exampleInputEmail1" class="form-label">Add meg az email cimed</label>
                                     <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email"
-                                           aria-describedby="emailHelp">
+                                           aria-describedby="emailHelp" v-model="email">
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleInputPassword1" class="form-label">Add meg a jelszavad</label>
                                     <input type="password" class="form-control mb-2" id="exampleInputPassword1"
-                                           placeholder="Password">
+                                           placeholder="Password" v-model="pass">
                                     <small><a href="#">Elfelejtetted a jelszavadat?</a></small>
                                 </div>
                                 <!--<div class="mb-3 form-check">
@@ -39,7 +39,7 @@
                                 </div>-->
                                 <div class="card-footer border-0">
                                     <div class="d-grid gap-2">
-                                        <button class="btn text-uppercase btn-login" type="button">Bejelentkezes
+                                        <button class="btn text-uppercase btn-login" type="submit">Bejelentkezes
                                         </button>
                                         <div class="pt-3"><small><a href="#">Meg nem regisztraltal?</a></small></div>
                                     </div>
@@ -54,8 +54,21 @@
 </template>
 
 <script>
+    import DataService from "../DataService";
+
     export default {
-        name: "login"
+        name: "login",
+        data(){
+            return {
+                email:'',
+                pass: ''
+            };
+        },
+        methods:{
+            login(){
+               DataService.SignIn({email:this.email, password: this.pass});
+            }
+        }
     }
 </script>
 

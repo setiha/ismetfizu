@@ -2,7 +2,9 @@ import axios from "axios";
 
 export const BACKEND_URL = "http://localhost:3000";
 export const FIREBASE_URL = "https://fizu-3e4ff-default-rtdb.firebaseio.com";
-
+const apiKey = "AIzaSyAOYJ-8h6Hs6Q7o5-S8iPUsyWo2MezWTcw";
+const signInUrl = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${apiKey}`;
+const signUpUrl = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${apiKey}`;
 export default {
     GetPosts() {
         return axios.get(`${FIREBASE_URL}/blogposts.json`).then(result => {
@@ -40,4 +42,15 @@ export default {
             return result.data;
         });
     },
+    SignIn({email, password}) {
+        return axios.post(signInUrl, {
+            email: email,
+            password: password,
+            returnSecureToken: true
+        }).then(
+            r => r.data).then(r => {
+            console.log('loginapi', r)
+            return r;
+        }).catch(console.warn);
+    }
 };

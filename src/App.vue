@@ -24,7 +24,8 @@
             index,
             blog,
             survey,
-            statistics
+            statistics,
+            registration
         }
     };
 </script>
