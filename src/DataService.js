@@ -48,7 +48,6 @@ export default {
             password: password,
             returnSecureToken: true
         }).then(r => r.data).then(r => {
-            console.log("loginapi:", r);
             return r;
         }).catch(console.warn);
     },
