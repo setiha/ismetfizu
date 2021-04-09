@@ -10,13 +10,24 @@ Vue.use(VueRouter);
 new Vue({
     el: '#app',
     router,
+    data(){
+        return {
+            user:{
+                kind: '',
+                idToken: '',
+                email: '',
+                refreshToken: '',
+                expiresIn: '',
+                localId: ''
+            }
+        }
+    },
+    methods: {
+      setUserMutation(userPayload){
+          console.log("userMutation: ", userPayload);
+          this.user = Object.assign({}, userPayload);
+      }
+    },
     render: h => h(App)
 });
-import DataService from "./DataService";
-
-const message = {
-    "email": "tihi@gmail.com",
-    "message": "Csak tesztelek",
-    "name": "tihici"
-};
 

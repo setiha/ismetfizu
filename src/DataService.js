@@ -51,5 +51,18 @@ export default {
             console.log("loginapi:", r);
             return r;
         }).catch(console.warn);
+    },
+    SignUp({email, password}) {
+        return axios.post(signUpUrl, {
+            email: email,
+            password: password,
+            returnSecureToken: true
+        }).then(r => r.data).then(r => {
+            console.log("signUp:", r);
+            return r;
+        }).catch(err => {
+            console.warn(err);
+            return Promise.reject(err.response.data.error.message);
+        });
     }
 };

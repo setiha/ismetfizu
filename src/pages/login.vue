@@ -67,7 +67,7 @@
                 DataService.SignIn({email: this.email, password: this.pass})
                     .then(r => {
                         console.log(this);
-                        this.$root.$data.user = Object.assign({}, r);
+                        this.$root.setUserMutation(r);
                         this.$router.push({name: 'Profile'});
 
                     })
