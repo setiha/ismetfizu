@@ -81,7 +81,6 @@
                 }
                 this.$root.signUpAction({email: this.email, password: this.password})
                     .then(r => {
-                        this.$root.setUserMutation(r);
                         this.$router.push({name: 'Profile'});
 
                     })

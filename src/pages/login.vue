@@ -17,7 +17,7 @@
                                 <div class="mb-3">
                                     <label for="exampleInputPassword1" class="form-label">Add meg a jelszavad</label>
                                     <input type="password" class="form-control mb-2" id="exampleInputPassword1"
-                                           placeholder="Password" v-model="pass">
+                                           placeholder="Password" v-model="password">
                                     <small><a href="#">Elfelejtetted a jelszavadat?</a></small>
                                 </div>
                                 <!--<div class="mb-3 form-check">
@@ -57,14 +57,14 @@
         data() {
             return {
                 email: '',
-                pass: ''
+                password: '',
+                isSignup: true
             };
         },
         methods: {
             login() {
-                this.$root.signInAction({email: this.email, password: this.pass})
+                this.$root.signInAction({email: this.email, password: this.password, isSignup: this.isSignup})
                     .then(r => {
-                        this.$root.setUserMutation(r);
                         this.$router.push({name: 'Profile'});
 
                     })

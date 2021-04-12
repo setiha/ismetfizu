@@ -27,24 +27,24 @@ new Vue({
     methods: {
         signInAction(credentialsPayload) {
             return this.authAction({
-                    email: credentialsPayload.email,
-                    password: credentialsPayload.password,
-                    isSignUp: false});
+                email: credentialsPayload.email,
+                password: credentialsPayload.password,
+                isSignUp: false
+            });
         },
         signUpAction(credentialsPayload) {
             return this.authAction({
                 email: credentialsPayload.email,
                 password: credentialsPayload.password,
-                isSignUp: true});
-
-        },
-        setUserMutation(userPayload) {
-            this.user = Object.assign({}, userPayload);
+                isSignUp: true
+            });
         },
         authAction(authPayload) {
-            return DataService.Auth(authPayload).then(
-                r => this.setUserMutation(r)
-            );
+            return DataService.Auth(authPayload).then(r => this.setUserMutation(r));
+        },
+        setUserMutation(userPayload) {
+            console.log("userMutation: ", userPayload);
+            this.user = Object.assign({}, userPayload);
         }
     },
     render: h => h(App)

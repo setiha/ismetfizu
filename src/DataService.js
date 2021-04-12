@@ -42,26 +42,33 @@ export default {
             return result.data;
         });
     },
-    SignIn({email, password}) {
-        return axios.post(signInUrl, {
+    Auth({ email, password, isSignUp }) {
+        return axios.post(isSignUp ? signUpUrl : signInUrl, {
             email: email,
             password: password,
             returnSecureToken: true
-        }).then(r => r.data).then(r => {
-            return r;
-        }).catch(console.warn);
+        })
+            .then(r => r.data)
+            .then(r => {
+                console.log("loginapi:", r);
+                return r;
+            })
+            .catch(err => {
+                console.warn(err);
+                return Promise.reject(err.response.data.error.message);
+            });
     },
-    SignUp({email, password}) {
+
+    /*SignUp({email, password}) {
         return axios.post(signUpUrl, {
             email: email,
             password: password,
             returnSecureToken: true
         }).then(r => r.data).then(r => {
-            console.log("signUp:", r);
             return r;
         }).catch(err => {
             console.warn(err);
             return Promise.reject(err.response.data.error.message);
         });
-    }
+    }*/
 };
