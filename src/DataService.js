@@ -1,4 +1,5 @@
 import axios from "axios";
+import store from "./store";
 
 export const BACKEND_URL = "http://localhost:3000";
 export const FIREBASE_URL = "https://fizu-3e4ff-default-rtdb.firebaseio.com";
