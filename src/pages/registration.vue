@@ -62,7 +62,7 @@
 </template>
 
 <script>
-
+import store from "../store";
     export default {
         name: "registration",
         data() {
@@ -79,7 +79,7 @@
                 if (this.password !== this.password2) {
                     this.alerts.push('A ket jelszo nem egyezik kerlek javitsd')
                 }
-                this.$root.signUpAction({email: this.email, password: this.password})
+                this.$store.dispatch('signUpAction',{email: this.email, password: this.password})
                     .then(r => {
                         this.$router.push({name: 'Profile'});
 

@@ -5,48 +5,13 @@ import Vue from "vue";
 import App from "./App.vue";
 import VueRouter from "vue-router";
 import router from "./router";
-import DataService from "./DataService";
+import store from "./store";
 
 Vue.use(VueRouter);
 new Vue({
     el: '#app',
     router,
-    data() {
-        return {
-
-            user: {
-                kind: '',
-                idToken: '',
-                email: '',
-                refreshToken: '',
-                expiresIn: '',
-                localId: '',
-            }
-        }
-    },
-    methods: {
-        signInAction(credentialsPayload) {
-            return this.authAction({
-                    email: credentialsPayload.email,
-                    password: credentialsPayload.password,
-                    isSignUp: false});
-        },
-        signUpAction(credentialsPayload) {
-            return this.authAction({
-                email: credentialsPayload.email,
-                password: credentialsPayload.password,
-                isSignUp: true});
-
-        },
-        setUserMutation(userPayload) {
-            this.user = Object.assign({}, userPayload);
-        },
-        authAction(authPayload) {
-            return DataService.Auth(authPayload).then(
-                r => this.setUserMutation(r)
-            );
-        }
-    },
-    render: h => h(App)
+    store,
+    render: h => h(App),
 });
 

@@ -52,6 +52,8 @@
 </template>
 
 <script>
+    import store from "../store";
+
     export default {
         name: "login",
         data() {
@@ -63,7 +65,9 @@
         },
         methods: {
             login() {
-                this.$root.signInAction({email: this.email, password: this.password, isSignup: this.isSignup})
+                this.$store.dispatch('signInAction',
+                    {
+                        email: this.email, password: this.password, isSignup: this.isSignup})
                     .then(r => {
                         this.$router.push({name: 'Profile'});
 

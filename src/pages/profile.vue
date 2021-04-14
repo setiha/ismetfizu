@@ -7,7 +7,7 @@
         name: "profile",
         computed:{
                 user(){
-                    return this.$root.$data.user || {};
+                    return this.$store.state.user|| {};
                 }
         }
     }
