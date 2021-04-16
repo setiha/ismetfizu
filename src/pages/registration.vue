@@ -63,6 +63,8 @@
 
 <script>
 
+    import {TYPES} from "../store";
+
     export default {
         name: "registration",
         data() {
@@ -79,7 +81,7 @@
                 if (this.password !== this.password2) {
                     this.alerts.push('A ket jelszo nem egyezik kerlek javitsd')
                 }
-                this.$store.dispatch('signUpAction',{email: this.email, password: this.password})
+                this.$store.dispatch(TYPES.actions.signUp,{email: this.email, password: this.password})
                     .then(r => {
                         this.$router.push({name: 'Profile'});
 

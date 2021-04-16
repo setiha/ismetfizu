@@ -52,7 +52,7 @@
 </template>
 
 <script>
-    import store from "../store";
+    import store, {TYPES} from "../store";
 
     export default {
         name: "login",
@@ -64,7 +64,7 @@
         },
         methods: {
             login() {
-                this.$store.dispatch('signInAction',
+                this.$store.dispatch(TYPES.actions.signIn,
                     {
                         email: this.email, password: this.password})
                     .then(r => {

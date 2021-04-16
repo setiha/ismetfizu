@@ -25,7 +25,7 @@ new Vue({
         }
     },
     methods: {
-        signInAction(credentialsPayload) {
+        signIn(credentialsPayload) {
             return this.authAction({
                 email: credentialsPayload.email,
                 password: credentialsPayload.password,

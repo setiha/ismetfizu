@@ -5,42 +5,51 @@ Vue.use(Vuex);
 
 import DataService from "./DataService";
 
-   const state ={
-        user: {
-            kind: '',
-            idToken: '',
-            email: '',
-            refreshToken: '',
-            expiresIn: '',
-            localId: '',
-        }
-    };
+export const TYPES = {
+    actions: {
+        signIn: "signIn",
+        signUp: "signUp",
+        auth: "auth"
+    },
+    mutations: {
+        setUser: "setUser"
+    }
+}
+const state = {
+    user: {
+        kind: '',
+        idToken: '',
+        email: '',
+        refreshToken: '',
+        expiresIn: '',
+        localId: '',
+    }
+};
 
 const actions = {
-        signInAction(vuexContext, credentialsPayload) {
-            return vuexContext.dispatch('authAction', {
-                    ...credentialsPayload,
-                    isSignUp: false
-                }
-            )
-        },
-        signUpAction
-            (vuexContext, credentialsPayload) {
-            return vuexContext.dispatch('authAction', {
+    [TYPES.actions.signIn](vuexContext, credentialsPayload) {
+        return vuexContext.dispatch(TYPES.actions.auth, {
                 ...credentialsPayload,
-                isSignUp: true
-            });
-        },
+                isSignUp: false
+            }
+        )
+    },
+    [TYPES.actions.signUp]
+        (vuexContext, credentialsPayload) {
+        return vuexContext.dispatch(TYPES.actions.auth, {
+            ...credentialsPayload,
+            isSignUp: true
+        });
+    },
 
-        authAction(vuexContext, authPayload) {
-            return DataService.Auth(authPayload).then(
-                r => vuexContext.commit('setUserMutation', r)
-            );
-        }
+    [TYPES.actions.auth](vuexContext, authPayload) {
+        return DataService.Auth(authPayload).then(
+            r => vuexContext.commit(TYPES.mutations.setUser, r)
+        );
     }
-;
+};
 const mutations = {
-    setUserMutation(state,userPayload) {
+    [TYPES.mutations.setUser](state, userPayload) {
         this.state.user = Object.assign({}, userPayload);
     },
 }
