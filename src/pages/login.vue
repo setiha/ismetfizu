@@ -60,14 +60,13 @@
             return {
                 email: '',
                 password: '',
-                isSignup: true
             };
         },
         methods: {
             login() {
                 this.$store.dispatch('signInAction',
                     {
-                        email: this.email, password: this.password, isSignup: this.isSignup})
+                        email: this.email, password: this.password})
                     .then(r => {
                         this.$router.push({name: 'Profile'});
 
