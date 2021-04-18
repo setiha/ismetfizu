@@ -3,6 +3,14 @@ import Vuex from "vuex";
 import axios from "axios";
 
 const apiKey = "AIzaSyAOYJ-8h6Hs6Q7o5-S8iPUsyWo2MezWTcw";
+const emptyUserObject = {
+    kind: '',
+    idToken: '',
+    email: '',
+    refreshToken: '',
+    expiresIn: '',
+    localId: '',
+};
 Vue.use(Vuex);
 
 
@@ -13,7 +21,8 @@ export const TYPES = {
         auth: "auth"
     },
     mutations: {
-        setUser: "setUser"
+        setUser: "setUser",
+        deleteUser: "deleteUser"
     }
 }
 const state = {
@@ -22,14 +31,7 @@ const state = {
             signUp: `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${apiKey}`,
             firebase: "https://fizu-3e4ff-default-rtdb.firebaseio.com"
         },
-        user: {
-            kind: '',
-            idToken: '',
-            email: '',
-            refreshToken: '',
-            expiresIn: '',
-            localId: '',
-        }
+        user: emptyUserObject
     }
 ;
 
@@ -62,15 +64,19 @@ const actions = {
             })
             .catch(err => {
                 console.warn(err);
+                commit(TYPES.mutations.deleteUser);
                 return Promise.reject(err.response.data.error.message);
             });
     }
 };
 const mutations = {
     [TYPES.mutations.setUser](state, userPayload) {
-        this.state.user = {...userPayload};
+        state.user = {...userPayload};
     },
-}
+    [TYPES.mutations.deleteUser](state){
+        state.user = {...emptyUserObject};
+    }
+};
 
 export default new Vuex.Store({
     state,
