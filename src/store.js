@@ -1,9 +1,10 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import axios from "axios";
 
+const apiKey = "AIzaSyAOYJ-8h6Hs6Q7o5-S8iPUsyWo2MezWTcw";
 Vue.use(Vuex);
 
-import DataService from "./DataService";
 
 export const TYPES = {
     actions: {
@@ -16,41 +17,58 @@ export const TYPES = {
     }
 }
 const state = {
-    user: {
-        kind: '',
-        idToken: '',
-        email: '',
-        refreshToken: '',
-        expiresIn: '',
-        localId: '',
+        url: {
+            signIn: `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${apiKey}`,
+            signUp: `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${apiKey}`,
+            firebase: "https://fizu-3e4ff-default-rtdb.firebaseio.com"
+        },
+        user: {
+            kind: '',
+            idToken: '',
+            email: '',
+            refreshToken: '',
+            expiresIn: '',
+            localId: '',
+        }
     }
-};
+;
 
 const actions = {
-    [TYPES.actions.signIn](vuexContext, credentialsPayload) {
-        return vuexContext.dispatch(TYPES.actions.auth, {
+    [TYPES.actions.signIn]({dispatch}, credentialsPayload) {
+        return dispatch(TYPES.actions.auth, {
                 ...credentialsPayload,
                 isSignUp: false
             }
         )
     },
     [TYPES.actions.signUp]
-        (vuexContext, credentialsPayload) {
-        return vuexContext.dispatch(TYPES.actions.auth, {
+        ({dispatch}, credentialsPayload) {
+        return dispatch(TYPES.actions.auth, {
             ...credentialsPayload,
             isSignUp: true
         });
     },
 
-    [TYPES.actions.auth](vuexContext, authPayload) {
-        return DataService.Auth(authPayload).then(
-            r => vuexContext.commit(TYPES.mutations.setUser, r)
-        );
+    [TYPES.actions.auth]({commit, state}, {email, password,isSignUp}) {
+        return axios.post(isSignUp ? state.url.signUp : state.url.signIn, {
+            email: email,
+            password: password,
+            returnSecureToken: true
+        })
+            .then(r => r.data)
+            .then(r => {
+                commit(TYPES.mutations.setUser, r)
+                return r;
+            })
+            .catch(err => {
+                console.warn(err);
+                return Promise.reject(err.response.data.error.message);
+            });
     }
 };
 const mutations = {
     [TYPES.mutations.setUser](state, userPayload) {
-        this.state.user = Object.assign({}, userPayload);
+        this.state.user = {...userPayload};
     },
 }
 
