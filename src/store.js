@@ -18,11 +18,13 @@ export const TYPES = {
     actions: {
         signIn: "signIn",
         signUp: "signUp",
-        auth: "auth"
+        auth: "auth",
+        loadPosts: "loadPosts"
     },
     mutations: {
         setUser: "setUser",
-        deleteUser: "deleteUser"
+        deleteUser: "deleteUser",
+        setPosts: "setPosts"
     }
 }
 const state = {
@@ -31,7 +33,8 @@ const state = {
             signUp: `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${apiKey}`,
             firebase: "https://fizu-3e4ff-default-rtdb.firebaseio.com"
         },
-        user: emptyUserObject
+        user: emptyUserObject,
+        posts: [],
     }
 ;
 
@@ -51,7 +54,7 @@ const actions = {
         });
     },
 
-    [TYPES.actions.auth]({commit, state}, {email, password,isSignUp}) {
+    [TYPES.actions.auth]({commit, state}, {email, password, isSignUp}) {
         return axios.post(isSignUp ? state.url.signUp : state.url.signIn, {
             email: email,
             password: password,
@@ -67,19 +70,33 @@ const actions = {
                 commit(TYPES.mutations.deleteUser);
                 return Promise.reject(err.response.data.error.message);
             });
+    },
+    [TYPES.actions.loadPosts]({commit, state}) {
+        return axios.get(`${state.url.firebase}/blogposts.json?auth=${state.user.idToken}`)
+            .then(r => r.data).then(r => {
+                commit(TYPES.mutations.setPosts, r)
+                return r;
+            });
     }
 };
 const mutations = {
     [TYPES.mutations.setUser](state, userPayload) {
         state.user = {...userPayload};
     },
-    [TYPES.mutations.deleteUser](state){
+    [TYPES.mutations.deleteUser](state) {
         state.user = {...emptyUserObject};
+    },
+    [TYPES.mutations.setPosts](state, fbPost) {
+        state.posts = Object.values(fbPost);
     }
-};
 
+};
+const getters = {
+    isLoggedIn: state => (state.user.idToken)
+}
 export default new Vuex.Store({
     state,
     actions,
+    getters,
     mutations
 });

@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-12 col-md-9">
                     <div class="row px-lg-5 justify-content-center">
-                        <BlogPostCard v-for="postDb in filteredPostCollection" :key="postDb.id"
+                        <BlogPostCard v-for="postDb in postCollection" :key="postDb.id"
                                       v-bind:post="postDb"></BlogPostCard>
 
                     </div>
@@ -52,9 +52,9 @@
 </template>
 
 <script>
-    import DataService from "../DataService";
     import BlogPostCard from "../components/BlogPostCard.vue";
     import BlogPostCategories from "../components/BlogPostCategories.vue";
+    import {TYPES} from "../store";
 
     export default {
         name: "blog.vue",
@@ -64,16 +64,23 @@
         },
         data() {
             return {
-                postCollection: [],
                 filters: {}
             };
         },
         created() {
-            DataService.GetPosts().then(posts => {
+            if(this.$store.getters.isLoggedIn){
+             return this.$store.dispatch(TYPES.actions.loadPosts);
+            }else{
+                this.$router.push({name: "Login"});
+            }
+            /*DataService.GetPosts().then(posts => {
                 this.postCollection = posts;
-            });
+            });*/
         },
         computed: {
+            postCollection(){
+                return this.$store.state.posts;
+            },
             filteredPostCollection() {
                if(!this.$route.params.categoryName){
                  return  this.postCollection
