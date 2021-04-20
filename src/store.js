@@ -33,8 +33,8 @@ const state = {
             signUp: `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${apiKey}`,
             firebase: "https://fizu-3e4ff-default-rtdb.firebaseio.com"
         },
-        user: emptyUserObject,
-        posts: [],
+        user: {...emptyUserObject, idToken: localStorage.getItem('idToken')},
+        posts: JSON.parse(localStorage.getItem('posts')) || []
     }
 ;
 
@@ -82,12 +82,16 @@ const actions = {
 const mutations = {
     [TYPES.mutations.setUser](state, userPayload) {
         state.user = {...userPayload};
+        localStorage.setItem('idToken', state.user.idToken);
     },
     [TYPES.mutations.deleteUser](state) {
         state.user = {...emptyUserObject};
+        localStorage.removeItem('idToken');
     },
     [TYPES.mutations.setPosts](state, fbPost) {
         state.posts = Object.values(fbPost);
+        localStorage.setItem("posts",JSON.stringify(state.posts));
+
     }
 
 };
