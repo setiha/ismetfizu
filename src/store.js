@@ -19,14 +19,19 @@ export const TYPES = {
         signIn: "signIn",
         signUp: "signUp",
         auth: "auth",
-        loadPosts: "loadPosts"
+        loadPosts: "loadPosts",
+        getPost: "getPost"
     },
     mutations: {
         setUser: "setUser",
         deleteUser: "deleteUser",
         setPosts: "setPosts"
+    },
+    getters: {
+        isLoggedIn: "isLoggedIn",
+        getPost: "getPost"
     }
-}
+};
 const state = {
         url: {
             signIn: `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${apiKey}`,
@@ -34,7 +39,7 @@ const state = {
             firebase: "https://fizu-3e4ff-default-rtdb.firebaseio.com"
         },
         user: {...emptyUserObject, idToken: localStorage.getItem('idToken')},
-        posts: JSON.parse(localStorage.getItem('posts')) || []
+        posts: JSON.parse(localStorage.getItem('posts')) || [],
     }
 ;
 
@@ -90,14 +95,17 @@ const mutations = {
     },
     [TYPES.mutations.setPosts](state, fbPost) {
         state.posts = Object.values(fbPost);
-        localStorage.setItem("posts",JSON.stringify(state.posts));
+        localStorage.setItem("posts", JSON.stringify(state.posts));
 
     }
 
 };
 const getters = {
-    isLoggedIn: state => (state.user.idToken)
-}
+    [TYPES.getters.isLoggedIn]: state => (state.user.idToken),
+    [TYPES.getters.getPost]: state => postId => {
+         return state.post = state.posts.find(p => p.id === postId);
+    },
+};
 export default new Vuex.Store({
     state,
     actions,

@@ -107,23 +107,22 @@
             </div>
         </div>-->
     </div>
+
 </template>
 
 <script>
-    import DataService from "../DataService";
+    import {TYPES} from "../store";
+    import {mapGetters} from "vuex";
 
     export default {
         name: "post",
-        data() {
-            return {
-                post: {}
-            };
-        },
-        created() {
-            DataService.GetPost(this.$route.params.postID).then(post => {
-                this.post = post;
-            });
+        computed: {
+            ...mapGetters([TYPES.getters.getPost]),
+            post: function () {
+                return this.getPost(this.$route.params.postID);
+            }
         }
-    }
+
+    };
 </script>
 

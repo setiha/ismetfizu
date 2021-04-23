@@ -1,11 +1,11 @@
 import axios from "axios";
 
 export default {
-    GetPost(postID) {
+    /*GetPost(postID) {
         return axios.get(`${FIREBASE_URL}/blogposts/${postID}.json`).then((result) => {
             return result.data;
         });
-    },
+    },*/
     PostContactMessage(data) {
         return axios.post(FIREBASE_URL + '/contactMessages.json', data)
             .then(() => {
