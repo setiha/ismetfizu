@@ -21,7 +21,8 @@ export const TYPES = {
         auth: "auth",
         loadPosts: "loadPosts",
         getPost: "getPost",
-        postContactMessage: "postContactMessage"
+        postContactMessage: "postContactMessage",
+        postSurveyResponse: "postSurveyResponse"
     },
     mutations: {
         setUser: "setUser",
@@ -45,12 +46,21 @@ const state = {
 ;
 
 const actions = {
+    [TYPES.actions.postSurveyResponse]({state}, surveyPayload){
+        return axios.post(`${state.url.firebase}/surveyResponses.json?auth=${state.user.idToken}`, surveyPayload).catch(
+            error => {
+                console.warn('store postSurvey error',error);
+                return Promise.reject("Survey para");
+            }
+        );
+    },
     [TYPES.actions.postContactMessage]({state}, contactPayload){
         return axios.post(`${state.url.firebase}/contactMessages.json?auth=${state.user.idToken}`, contactPayload).catch(error => {
             console.warn('store postContactMessage', error);
             return Promise.reject('contact msg para waa');
         });
     },
+
     [TYPES.actions.signIn]({dispatch}, credentialsPayload) {
         return dispatch(TYPES.actions.auth, {
                 ...credentialsPayload,

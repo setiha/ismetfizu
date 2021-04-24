@@ -101,7 +101,9 @@
 </template>
 
 <script>
-    import DataService from "../DataService";
+
+    import {TYPES} from "../store";
+    import {mapActions} from "vuex";
 
     export default {
         name: 'ShortSurvey',
@@ -121,6 +123,7 @@
             }
         },
         methods: {
+            ...mapActions([TYPES.actions.postSurveyResponse]),
             Submit(event) {
                 let valueCollection = Object.values(this.fields);
                 let missingValues = valueCollection.filter(value => {
@@ -128,7 +131,7 @@
                 });
                 if (missingValues.length === 0) {
                     event.preventDefault();
-                    DataService.PostSurveyResponses(this.fields).then(success => {
+                   this.postSurveyResponse(this.fields).then(success => {
                         if (success) {
                             this.fields.gender='';
                             this.fields.sector='';

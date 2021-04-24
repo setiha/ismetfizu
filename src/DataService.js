@@ -6,16 +6,6 @@ export default {
             return result.data;
         });
     },*/
-    PostSurveyResponses(data) {
-        return axios.post(FIREBASE_URL + '/surveyResponses.json', data)
-            .then(() => {
-                return true
-            })
-            .catch(error => {
-                console.warn(error);
-                return false;
-            });
-    },
     GetSurveyResponses() {
         return axios.get(FIREBASE_URL + "/surveyResponses.json").then((result) => {
             return result.data;
