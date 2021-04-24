@@ -38,7 +38,8 @@
 </template>
 
 <script>
-    import DataService from "../DataService";
+    import {mapActions} from "vuex";
+    import {TYPES} from "../store";
 
     export default {
         name: "contact",
@@ -55,6 +56,7 @@
             }
         },
         methods: {
+            ...mapActions([TYPES.actions.postContactMessage]),
             ShowSuccessAlert() {
                 this.alerts.success = true;
             },
@@ -76,7 +78,7 @@
                     return;
                 }
                 const now = new Date();
-                DataService.PostContactMessage({
+                this.postContactMessage({
                     email: this.email,
                     name: this.name,
                     message: this.message,
