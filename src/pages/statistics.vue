@@ -14,7 +14,6 @@
 <script>
     import BarChart from "../components/BarChart.vue";
     import DoughnutChart from "../components/DoughnutChart.vue";
-    import DataService from "../DataService";
     import {mapActions} from "vuex";
     import {TYPES} from "../store";
 
