@@ -6,11 +6,6 @@ export default {
             return result.data;
         });
     },*/
-    GetSurveyResponses() {
-        return axios.get(FIREBASE_URL + "/surveyResponses.json").then((result) => {
-            return result.data;
-        });
-    }
 
     /*SignUp({email, password}) {
         return axios.post(signUpUrl, {

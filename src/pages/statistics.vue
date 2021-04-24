@@ -15,6 +15,8 @@
     import BarChart from "../components/BarChart.vue";
     import DoughnutChart from "../components/DoughnutChart.vue";
     import DataService from "../DataService";
+    import {mapActions} from "vuex";
+    import {TYPES} from "../store";
 
     export default {
         name: "statistics.vue",
@@ -38,6 +40,7 @@
             };
         },
         computed: {
+            ...mapActions([TYPES.actions.getSurveyData]),
             jobFillData() {
                 let counts = this.jobs.map(job => {
                     const count = this.rawData.filter(response => {
@@ -66,12 +69,12 @@
                             return +response.income;
                         }).reduce((acc, income) => {
                             return +acc + +income;
-                        },0);
+                        }, 0);
                         let avgIncome = totalIncomes / responsesInJob.length;
                         return {
                             label: job,
                             backgroundColor: this.defaultColor[index],
-                            data:[avgIncome]
+                            data: [avgIncome]
                         };
 
                     }
@@ -105,10 +108,10 @@
                         ,
                     }
                 }
-            }
+            },
         },
         created() {
-            DataService.GetSurveyResponses().then(
+            this.getSurveyData.then(
                 result => {
                     this.rawData = Object.values(result);
                 }
