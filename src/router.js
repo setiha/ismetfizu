@@ -12,11 +12,13 @@ import registration from "./pages/registration.vue";
 import profile from "./pages/profile.vue";
 import store, {TYPES} from "./store";
 
-function ifLoggedIn(to, from, next){
-    if(!store.getters[TYPES.getters.isLoggedIn]){
+function Authenticated(to, from, next){
+    if(store.getters[TYPES.getters.isLoggedIn]){
+      next();
+    }else{
         next({name: "Login"});
     }
-        next();
+
 }
 export default new VueRouter({
     mode: 'history',
@@ -31,7 +33,7 @@ export default new VueRouter({
             name: "Blog",
             path: '/blog',
             component: blog,
-            beforeEnter: ifLoggedIn
+            beforeEnter: Authenticated
         },
         {
                 name: "blogCategory",
@@ -44,7 +46,7 @@ export default new VueRouter({
             name: "blogPost",
             path: "/blog/post/:postID",
             component: post,
-            beforeEnter: ifLoggedIn
+            beforeEnter: Authenticated
 
         },
         {
@@ -57,7 +59,7 @@ export default new VueRouter({
             name: "Kerdoiv",
             path: "/survey",
             component: survey,
-            beforeEnter: ifLoggedIn
+            beforeEnter: Authenticated
 
 
         },
@@ -65,7 +67,7 @@ export default new VueRouter({
             name: "Fizu terkep",
             path: "/statistics",
             component: statistics,
-            beforeEnter: ifLoggedIn
+            beforeEnter: Authenticated
 
         },
         {

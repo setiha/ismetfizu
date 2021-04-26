@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-12 col-md-9">
                     <div class="row px-lg-5 justify-content-center">
-                        <BlogPostCard v-for="postDb in postCollection" :key="postDb.id"
+                        <BlogPostCard v-for="postDb in filteredPostCollection" :key="postDb.id"
                                       v-bind:post="postDb"></BlogPostCard>
 
                     </div>
@@ -36,17 +36,6 @@
                     </div>
                 </div>
             </div>
-            <!--<div class="row">
-                <nav aria-label="Page navigation example" class=" mt-5">
-                    <ul class="pagination justify-content-center">
-                        <li class="page-item"><a class="page-link" href="#">Elozo</a></li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">Kovetkezo</a></li>
-                    </ul>
-                </nav>
-            </div>-->
         </div>
     </div>
 </template>
@@ -55,6 +44,7 @@
     import BlogPostCard from "../components/BlogPostCard.vue";
     import BlogPostCategories from "../components/BlogPostCategories.vue";
     import {TYPES} from "../store";
+    import {mapState} from "vuex";
 
     export default {
         name: "blog.vue",
@@ -74,9 +64,7 @@
             });*/
         },
         computed: {
-            postCollection(){
-                return this.$store.state.posts;
-            },
+            ...mapState({postCollection: state => state.posts}),
             filteredPostCollection() {
                if(!this.$route.params.categoryName){
                  return  this.postCollection
