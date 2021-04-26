@@ -20,21 +20,6 @@
                                            placeholder="Password" v-model="password">
                                     <small><a href="#">Elfelejtetted a jelszavadat?</a></small>
                                 </div>
-                                <!--<div class="mb-3 form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                    <label class="form-check-label" for="exampleCheck1">Bejelentkezve maradok</label>
-                                </div>-->
-                                <!-- <div class="text-center my-3">
-                                     <button type="button" class=" loginBtn btn login-Btn-facebook py-2 my-2 "><img
-                                             src="src/img/facebook.svg" height="18" alt="Facebook icon"
-                                             class="me-2 mb-1">Facebook
-                                         bejelentkezes
-                                     </button>
-                                     <button type="submit" class="btn loginBtn login-Btn-google py-2 my-2"><img
-                                             src="src/img/google.svg" height="22" alt="Google icon" class="me-2">Google
-                                         bejelentkezes
-                                     </button>
-                                 </div>-->
                                 <div class="card-footer border-0">
                                     <div class="d-grid gap-2">
                                         <button class="btn text-uppercase btn-login" type="submit">Bejelentkezes
