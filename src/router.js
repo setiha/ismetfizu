@@ -10,6 +10,14 @@ import statistics from "./pages/statistics.vue";
 import login from "./pages/login.vue";
 import registration from "./pages/registration.vue";
 import profile from "./pages/profile.vue";
+import store, {TYPES} from "./store";
+
+function ifLoggedIn(to, from, next){
+    if(!store.getters[TYPES.getters.isLoggedIn]){
+        next({name: "Login"});
+    }
+        next();
+}
 export default new VueRouter({
     mode: 'history',
     routes: [
@@ -23,17 +31,20 @@ export default new VueRouter({
             name: "Blog",
             path: '/blog',
             component: blog,
+            beforeEnter: ifLoggedIn
         },
         {
                 name: "blogCategory",
                 path: "/blog/category/:categoryName",
-                component: blog
+                component: blog,
+
 
         },
         {
             name: "blogPost",
             path: "/blog/post/:postID",
-            component: post
+            component: post,
+            beforeEnter: ifLoggedIn
 
         },
         {
@@ -45,13 +56,16 @@ export default new VueRouter({
         {
             name: "Kerdoiv",
             path: "/survey",
-            component: survey
+            component: survey,
+            beforeEnter: ifLoggedIn
+
 
         },
         {
             name: "Fizu terkep",
             path: "/statistics",
-            component: statistics
+            component: statistics,
+            beforeEnter: ifLoggedIn
 
         },
         {

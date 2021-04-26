@@ -68,11 +68,7 @@
             };
         },
         created() {
-            if(this.$store.getters.isLoggedIn){
              return this.$store.dispatch(TYPES.actions.loadPosts);
-            }else{
-                this.$router.push({name: "Login"});
-            }
             /*DataService.GetPosts().then(posts => {
                 this.postCollection = posts;
             });*/

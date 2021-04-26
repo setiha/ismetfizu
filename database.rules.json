@@ -1,0 +1,14 @@
+{
+  "rules": {
+    ".read": "auth !==null",
+    ".write": "auth !==null",
+    "blogposts": {
+      ".read": true,
+      ".write": "auth !=null"
+    },
+    "contactMessages": {
+      ".read": "auth !=null",
+      ".write": true
+    }
+  }
+}
