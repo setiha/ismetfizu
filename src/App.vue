@@ -14,7 +14,6 @@
     import blog from "./pages/blog.vue";
     import survey from "./pages/survey.vue";
     import statistics from "./pages/statistics.vue";
-    import login from "./pages/login.vue";
     import registration from "./pages/registration.vue";
     export default {
         name: 'App',

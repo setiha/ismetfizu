@@ -13,7 +13,7 @@ import profile from "./pages/profile.vue";
 import store, {TYPES} from "./store";
 
 function Authenticated(to, from, next){
-    if(store.getters[TYPES.getters.isLoggedIn]){
+    if(store.getters.isLoggedIn){
       next();
     }else{
         next({name: "Login"});
